@@ -1,113 +1,266 @@
-import Image from 'next/image'
-
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+"use client";
+import React, { useState, useContext } from "react";
+import ProductCard from "@/src/components/ProductCard/ProductCard";
+import { TabContent, Tabs } from "@/src/components/HomeTabs/Tabs";
+import useSWR from "swr";
+import axios from "axios";
+import { Context } from "../context/index";
+interface Product {
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  discountPercentage: number;
+  rating: number;
+  stock: number;
+  brand: string;
+  category: string;
+  thumbnail: string;
+  images: string[];
+  onClick: any;
 }
+
+const fetcher = async (url: string) => {
+  const response = await axios.get(url);
+  return response.data;
+};
+
+ export default function HomePage() {
+  const { dispatch }: any = useContext(Context as any);
+  const [pillActive, setPillActive] = useState<number>(0);
+  const [pillCategory, setPillCategory] = useState<string>("");
+  const [brandPillActive, setBrandPillActive] = useState<number>(0);
+  const [pillBrand, setPillBrand] = useState<string>("");
+  const [ratingSortOption, setRatingSortOption] = useState<string>("");
+  const [priceSortOption, setPriceSortOption] = useState<string>("");
+  const [discountSortOption, setDiscountSortOption] = useState<string>("");
+
+  const { data, error } = useSWR(
+    "https://dummyjson.com/products?limit=100",
+    fetcher
+  );
+
+  if (error) return <p>Loading failed...</p>;
+  if (!data)
+    return (
+      <>
+        <div className="flex justify-center items-center w-full h-screen text-center">
+          <h3 className="animate-bounce text-center">
+            Hold your horses! Our products are getting their fashionably late
+            entrance😉...
+          </h3>
+        </div>
+      </>
+    );
+
+  let categories: any[] = ["All"];
+  let brands: any[] = ["All"];
+
+  for (let i = 0; i < data.products.length; i++) {
+    let category = data.products[i].category;
+    let brand = data.products[i].brand;
+    if (!categories.includes(category)) {
+      categories.push(category);
+    }
+    if (!brands.includes(brand)) {
+      brands.push(brand);
+    }
+  }
+
+  for (let i = 0; i < data.products.length; i++) {
+    let brand = data.products[i].brand;
+    if (!brands.includes(brand)) {
+      brands.push(brand);
+    }
+  }
+
+  console.log(brands);
+
+  const filteredProducts = data.products.filter((product: any) => {
+    if (pillActive == 0 || pillCategory === "All") {
+      return true;
+    } else {
+      return product.category === pillCategory;
+    }
+  });
+
+  const filteredBrandsProducts = data.products.filter((product: any) => {
+    if (brandPillActive == 0 || pillBrand === "All") {
+      return true;
+    } else {
+      return product.brand === pillBrand;
+    }
+  });
+
+  const handleRatingSortChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    setRatingSortOption(event.target.value);
+  };
+
+  const handlePriceSortChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    setPriceSortOption(event.target.value);
+  };
+
+  const handleDiscountSortChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    setDiscountSortOption(event.target.value);
+  };
+
+  const sortProducts = (products: Product[]): Product[] => {
+    let sortedProducts = [...products];
+
+    if (ratingSortOption === "highToLow") {
+      sortedProducts.sort((a, b) => b.rating - a.rating);
+    } else if (ratingSortOption === "lowToHigh") {
+      sortedProducts.sort((a, b) => a.rating - b.rating);
+    }
+
+    if (priceSortOption === "lowToHigh") {
+      sortedProducts.sort((a, b) => a.price - b.price);
+    } else if (priceSortOption === "highToLow") {
+      sortedProducts.sort((a, b) => b.price - a.price);
+    }
+
+    if (discountSortOption === "lowToHigh") {
+      sortedProducts.sort(
+        (a, b) => a.discountPercentage - b.discountPercentage
+      );
+    } else if (discountSortOption === "highToLow") {
+      sortedProducts.sort(
+        (a, b) => b.discountPercentage - a.discountPercentage
+      );
+    }
+
+    return sortedProducts;
+  };
+
+  const sortedProducts = sortProducts(data.products);
+
+  return (
+    <div className={` m-auto border main-container`}>
+      <Tabs>
+        <TabContent label="Explore Our" colorLabel="Collection">
+          <div className="border-black">
+            <div className="sorted-product flex justify-between items-center">
+              <div>
+                <select
+                  value={priceSortOption}
+                  onChange={handlePriceSortChange}
+                >
+                  <option value="">Sort By Price</option>
+                  <option value="lowToHigh">Low to High</option>
+                  <option value="highToLow">High to Low</option>
+                </select>
+              </div>
+              <div>
+                <select
+                  value={ratingSortOption}
+                  onChange={handleRatingSortChange}
+                >
+                  <option value="">Sort By Rating</option>
+                  <option value="highToLow">High to Low</option>
+                  <option value="lowToHigh">Low to High</option>
+                </select>
+              </div>
+
+              <div>
+                <select
+                  value={discountSortOption}
+                  onChange={handleDiscountSortChange}
+                >
+                  <option value="">Sort By Discount</option>
+                  <option value="lowToHigh">Low to High</option>
+                  <option value="highToLow">High to Low</option>
+                </select>
+              </div>
+            </div>
+            <div className="product-card-div">
+              {sortedProducts.map((product: Product) => {
+                return (
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                    onClick={() => {
+                      dispatch({ type: "ADD_TO_CART", payload: product });
+                    }}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        </TabContent>
+        <TabContent label="Shop by" colorLabel="Category">
+          <div className="border-black">
+            <div className="w-full tab-cont mb-[50px]">
+              <div>
+                <div className="pill-div min-w-[1578px] overflow-auto h-[48px]  flex text-[16px]  text-[#222222] cursor-pointer">
+                  {categories.map((items: any, i: number) => {
+                    return (
+                      <div
+                        className={`pills-btn transition ease-in-out min-w-[180px] h-full rounded-full border flex justify-center items-center mr-2 ${
+                          pillActive === i
+                            ? "bg-[#008ECC] text-white"
+                            : "bg-white text-black"
+                        } `}
+                        key={i}
+                        onClick={() => {
+                          setPillActive(i);
+                          setPillCategory(items);
+                        }}
+                      >
+                        {items}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+            <div className="product-card-div">
+              {filteredProducts.map((product: Product) => {
+                return <ProductCard key={product.id} product={product} />;
+              })}
+            </div>
+          </div>
+        </TabContent>
+        <TabContent label="Shop By" colorLabel="Brand">
+          <div className="border-black">
+            <div className="overflow-auto w-full tab-cont mb-[50px]">
+              <div>
+                <div className="min-w-[1578px] pill-div overflow-auto h-[48px]  flex text-[16px]  text-[#222222] cursor-pointer">
+                  {brands.map((items: any, i: number) => {
+                    return (
+                      <div
+                        className={`pills-btn transition ease-in-out min-w-[180px] h-full rounded-full border flex justify-center items-center mr-2 text-center leading-3 ${
+                          brandPillActive === i
+                            ? "bg-[#008ECC] text-white"
+                            : "bg-white text-black"
+                        } `}
+                        key={i}
+                        onClick={() => {
+                          setBrandPillActive(i);
+                          setPillBrand(items);
+                        }}
+                      >
+                        {items}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+            <div className="product-card-div">
+              {filteredBrandsProducts.map((product: Product) => {
+                return <ProductCard key={product.id} product={product} />;
+              })}
+            </div>
+          </div>
+        </TabContent>
+      </Tabs>
+    </div>
+  );
+};
+
