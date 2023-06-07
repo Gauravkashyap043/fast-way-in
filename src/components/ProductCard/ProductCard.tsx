@@ -1,11 +1,6 @@
 "use client";
 import React, { useState } from "react";
-
-import { FaHeart, FaRegHeart } from "react-icons/fa";
-import Image from "next/image";
-import upload from "../../../assets/images/upload.png";
 import Link from "next/link";
-import StarRating from "../starRating/StarRating";
 
 interface ProductCardProps {
   product: ProductPractice;
@@ -28,7 +23,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }: any) => {
               {product.discountPercentage}%
             </div>
           </div>
-          {/* <p className="text-[10px] rating-star">⭐⭐⭐⭐⭐</p> */}
           <div className="bg-green-600 text-white h-[17px]  flex justify-center items-center rounded px-1 text-sm">
               <span className="text-sm">{product.rating}</span>
               <span className="">⭐</span>
